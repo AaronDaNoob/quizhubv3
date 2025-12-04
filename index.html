@@ -6472,10 +6472,10 @@ function toggleRandomize() {
 function init() {
   loadSavedTheme();
   loadSidebarState();
-  allQuizzes = [...getChemistryQuizzes(), ...getUHVQuizzes(), ...getBiologyQuizzes(), ...getEMEQuizzes(), ...getMathQuizzes(), ...getESSQuizzes()];
+  allQuizzes = [...getChemistryQuizzes(), ...getUHVQuizzes(), ...getBiologyQuizzes(), ...getEMEQuizzes(), ...getMathQuizzes()];
   // include unit 2, unit 4 and unit 5 math quizzes as well
   allQuizzes = allQuizzes.concat(getMathUnit2()).concat(getMathUnit3()).concat(getMathUnit4()).concat(getMathUnit5());
-  allQuizzes =allQuizzes.concat(getESSUnit2Quizzes()).concat(getESSUnit3Quizzes());
+  allQuizzes =allQuizzes.concat(getESSQuizzes()).concat(getESSUnit2Quizzes()).concat(getESSUnit3Quizzes());
   try {
     const el = document.getElementById('randomizeToggle');
     if (el) el.checked = randomizeQuestions;
