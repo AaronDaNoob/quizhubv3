@@ -3301,6 +3301,270 @@ function getBiologyQuizzes() {
 }
 
 // Maths Quizzes (Unit 1)
+function getMathQuizzes() {
+  return [
+    {
+      id: "math-u1",
+      subject: "Maths",
+      unit: 1,
+      name: "Unit 1 - Matrices",
+      questions: [
+        {"text":"1. If every minor of order 3 of matrix A is zero, then rank of A is","options":["3","0","less than 3","none of these"],"correct":2},
+        {"text":"2. Rank of an identity matrix of order 4 is","options":["4","0","1","none of these"],"correct":0},
+        {"text":"3. If the rank of a matrix A is 3 then the rank of transpose of A is","options":["less than 3","equal to 3","greater than 3","none"],"correct":1},
+        {"text":"4. If A is 3x4 matrix the maximum possible value of the rank A is","options":["4","3","2","0"],"correct":1},
+        {"text":"5. Let AX = B be a system of 3 linear equations in 3 unknowns and ρ(A) = ρ(A : B) = 3, then the system of equations is","options":["inconsistent with no solution","has two solutions","consistent and has infinite solutions","consistent and has a unique solution"],"correct":3},
+        {"text":"6. If rank of a coefficient matrix and rank of the augmented matrix are equal then system is","options":["inconsistent","Consistent","equal","none"],"correct":1},
+        {"text":"7. Rank of the matrix [[2,0,0,0],[0,2,0,0],[0,0,1,0],[0,0,10,10]] is","options":["1","2","4","3"],"correct":2},
+        {"text":"8. If A = [4 3 2 1; 0 1 k 2; 0 0 k/3 -6 2] then the value of k for which AX = B is inconsistent is","options":["18","10","4","3"],"correct":1},
+        {"text":"9. Find the rank of the matrix A = [[1,3,5],[4,6,7],[1,2,2]]","options":["3","2","1","0"],"correct":0},
+        {"text":"10. Given A = [[2, -0.1],[0,3]] and A^{-1} = [[1/2, a],[0, b]] then find a + b","options":["6/20","7/20","8/20","5/20"],"correct":1},
+        {"text":"11. The value of k for which the following equations have infinite solutions is","options":["2","3","-3","1"],"correct":2},
+        {"text":"12. The system of equations x + 2y + z = 9, 2x + y + 3z = 7 can be expressed as","options":["[1 2 1; 2 1 3][x y z]^T = [9 7]^T (format A)","[1 2 1; 2 1 3][x y z]^T = [9 7]^T (format B)","[1 2 1; 2 1 3][x y z]^T = [9 7]^T (format C)","none"],"correct":2},
+        {"text":"13. If 3x + 2y + z = 0, x + 4y + z = 0, 2x + y + 4z = 0, then the system of equations","options":["it is inconsistent","it has only the trivial solution x=0, y=0, z=0","it can be reduced to a single equation and so a solution does not exist","determinant of the matrix of coefficient is zero"],"correct":1},
+        {"text":"14. If A is a square matrix such that A A' = I, then value of A' A is","options":["A^2","I","A^{-1}","0"],"correct":1},
+        {"text":"15. If every minor of order r of a matrix A is zero, then rank of A is","options":["greater than r","equal to r","less than or equal to r","less than"],"correct":3},
+        {"text":"16. The rank of matrix [[2, -1, 3, 1],[1, 4, -2, 1],[5, 2, 4, 2]] is","options":["1","2","3","4"],"correct":1},
+        {"text":"17. If rank(A) = 2, rank(B) = 3 then rank(AB) is","options":["equal to 6","not equal to 6","0","one"],"correct":1},
+        {"text":"18. If the rank of a matrix A is 3 then the rank of transpose of A is","options":["less than 3","equal to 3","greater than 3","equal to 0"],"correct":1},
+        {"text":"19. If a matrix A is reduced to row echelon form then rank of the matrix is","options":["number of zero rows","number of non-zero rows","total number of rows","none"],"correct":1},
+        {"text":"20. If A is 5 x 4 matrix the maximum possible value of the rank A is","options":["5","4","3","0"],"correct":1}
+      ]
+    }
+  ];
+}
+
+// Maths Unit 2: Eigenvalues & Eigenvectors
+function getMathUnit2() {
+  return [
+    {
+      id: "math-u2",
+      subject: "Maths",
+      unit: 2,
+      name: "Unit 2 - Eigenvalues & Eigenvectors",
+      questions: [
+        {"text":"1. The characteristic equation of the matrix A = [[4,1],[1,4]] is","options":["λ^2 + 8λ - 15 = 0","-λ^2 - 8λ + 15 = 0","λ^2 - 8λ + 15 = 0","-λ^2 + 8λ + 15 = 0"],"correct":2},
+        {"text":"2. The eigenvalues of a real symmetric matrix are","options":["Always complex","Always imaginary","Always zero","Always real"],"correct":3},
+        {"text":"3. If 5 is one of the eigenvalues of A, then 25 is an eigenvalue of which matrix?","options":["A + I","A^2","A^{-1}","2A"],"correct":1},
+        {"text":"4. The sum and product of the eigenvalues of the matrix [[2,-3],[4,-2]] are","options":["0 and 8","-4 and -20","0 and -20","-4 and 8"],"correct":0},
+        {"text":"5. The eigenvalues of the inverse of A = [[3,2],[2,3]] are","options":["1 and 5","3 and 3","1 and 1/5","2 and 4"],"correct":2},
+        {"text":"6. If matrix A has eigenvalues 1, 3 and 5, then tr(A) =","options":["15","8","9","5"],"correct":2},
+        {"text":"7. The power method estimates","options":["All eigenvalues","All eigenvectors","Determinant","Dominant eigenvalue"],"correct":3},
+        {"text":"8. In each iteration of the Power Method, the next vector is obtained by","options":["Multiplying the matrix with the current vector","Multiplying the current vector by the inverse of the matrix","Taking the transpose of the matrix","Solving a linear system"],"correct":0},
+        {"text":"9. Which matrix is likely to converge using the Power Method?","options":["[[2,0],[0,2]]","[[0,1],[1,0]]","[[-1,0],[0,1]]","[[5,2],[1,3]]"],"correct":3},
+        {"text":"10. Consider A = [[2,1],[1,2]]. Then _____ is the dominant eigenvalue of A.","options":["1","2","3","0"],"correct":2},
+        {"text":"11. Jacobi's method is used to find","options":["Solution of ODEs","Eigenvalues of symmetric matrices","Inverse of matrix","Determinant"],"correct":1},
+        {"text":"12. In Jacobi's method, the matrix becomes","options":["Upper triangular","Tri-diagonal","Diagonal","Skew-symmetric"],"correct":2},
+        {"text":"13. Given a symmetric matrix A = [[a11,a12],[a21,a22]], after the first Jacobi rotation, the goal is to","options":["Eliminate the entries a12 and a21","Eliminate the entry a11","Make the matrix singular","Find the determinant"],"correct":0},
+        {"text":"14. In Jacobi's method the rotation angle θ is typically determined from","options":["Based on the determinant","From the trace of the matrix","From the off-diagonal elements using tan(2θ)","From the matrix norm"],"correct":2},
+        {"text":"15. The Givens rotation targets _____ elements at a time.","options":["One element","One row and one column","One off-diagonal element","All elements in a row"],"correct":2},
+        {"text":"16. The purpose of applying the Givens rotation to a matrix is to","options":["Increase its trace","Reduce it to tridiagonal form","Make all elements zero","Make it symmetric"],"correct":1},
+        {"text":"17. In Givens' method, the rotation angle θ is typically determined using the formula","options":["tan(2θ) = 2a_{ij}/(a_{ii}-a_{jj})","tan(θ) = a_{12}/a_{13}","tan(2θ) = 2a_{ij}/(a_{ii}+a_{jj})","tan(θ) = a_{13}/a_{12}"],"correct":0},
+        {"text":"18. A diagonalized matrix has:","options":["Only zero eigenvalues","Zero determinant","Diagonal elements as eigenvalues","Only real eigenvectors"],"correct":2},
+        {"text":"19. Diagonalization of a matrix can be applicable for:","options":["Solving ODEs","Computing powers of matrix","Matrix inversion","Rank calculation"],"correct":1},
+        {"text":"20. If a matrix is symmetric and diagonalizable, its eigenvectors can be chosen to be","options":["Linearly dependent","Orthogonal","Complex conjugates","Identical"],"correct":1}
+      ]
+    }
+  ];
+}
+
+
+
+function getMathUnit3() {
+  return [
+    {
+      id: "math-u3",
+      subject: "Maths",
+      unit: 3,
+      name: "Unit 3 - Curvature & Radius of Curvature",
+      questions: [
+        {
+    "text": "The derivative of arc S for the curve y = f(x) is dS/dx = ________",
+    "options": ["1 + (dx/dy)²", "√(1 + (dy/dx)²)", "√(1 + d²y/dx²)", "1 + dx/dy"],
+    "correct": 1
+  },
+  {
+    "text": "The radius of curvature for the curve y = eˣ at the point where it crosses the y-axis is ________",
+    "options": ["√2", "2√2", "√2 / 2", "2"],
+    "correct": 0
+  },
+  {
+    "text": "The derivative of arc S for the curve x = f(t), y = g(t) is dS/dt = ________",
+    "options": ["(dx/dt) + (dy/dt)", "√((dx/dt)² + (dy/dt)²)", "(dx/dt)² + (dy/dt)²", "√((dx/dt)² − (dy/dt)²)"],
+    "correct": 1
+  },
+  {
+    "text": "The derivative of arc S for the curve r = f(θ) is dS/dθ = ________",
+    "options": ["√(r² + (dr/dθ)²)", "r + (dr/dθ)²", "(r)² − (dr/dθ)²", "(r)² + (dr/dθ)²"],
+    "correct": 0
+  },
+  {
+    "text": "The derivative of arc S for the curve r = f(θ) is dS/dr = ________",
+    "options": ["√(1 + (r dθ/dr)²)", "(r)² + (dr/dθ)²", "√(r² + (dr/dθ)²)", "r + (dr/dθ)²"],
+    "correct": 0
+  },
+  {
+    "text": "The radius of curvature for the curve x = f(t), y = g(t) is ρ = ________",
+    "options": [
+      "{((x′)² + (y′)²)³/²} / (x′y″ − x″y′)",
+      "{((x′)² − (y′)²)³/²} / (x′y″ − x″y′)",
+      "{((x′) + (y′))³/²} / (x′y″ − x″y′)",
+      "{((x′)² + (y′)²)³/²} / (2x′y″ − x″y′)"
+    ],
+    "correct": 0
+  },
+  {
+    "text": "If φ is the angle between the tangent and radius vector at any point on the curve r = f(θ) then tanφ = ________",
+    "options": ["r dθ/dr", "dθ/ds", "dr/ds", "r dθ/ds"],
+    "correct": 3
+  },
+  {
+    "text": "The radius of curvature for the curve r = f(θ) is ρ = ________",
+    "options": [
+      "{(r² + (r₁)²)³/²} / |r² + 2(r₁)² − r r₂|",
+      "{(r² + (r₁)²)²/³} / |r² + 2(r₁)² − r r₂|",
+      "{(r² + (r₁)³)³/²} / |r² + 2(r₁)² + r r₂|",
+      "{(r² + (r₁)²)³/²} / |r² − 2(r₁)² − r r₂|"
+    ],
+    "correct": 0
+  },
+  {
+    "text": "The derivative of arc S for the curve x = f(y) is dS/dy = ________",
+    "options": ["√(1 + (dx/dy)²)", "√(1 + (dy/dx)²)", "√(1 + d²y/dx²)", "√(1 + dx/dy)"],
+    "correct": 0
+  },
+  {
+    "text": "Curvature of a straight line is ________",
+    "options": ["3", "1", "2", "0"],
+    "correct": 3
+  },
+  {
+    "text": "The angle between the radius vector and the tangent for the curve r = 2 sin θ is ________",
+    "options": ["π/4 + θ", "π − θ", "θ", "π/2 + θ"],
+    "correct": 2
+  },
+  {
+    "text": "The radius of curvature for the curve y = f(x) is ρ = ________",
+    "options": ["(1 + y₁²)³/² / y₂", "(1 − y₁²)³/² / y₂", "(1 + y₂²)³/² / y₂", "(1 + y₁²)² / y₂"],
+    "correct": 0
+  },
+  {
+    "text": "The radius of curvature for the curve x = eᵗ, y = e⁻ᵗ at t = 0 is ________",
+    "options": ["2", "√3", "1", "√2"],
+    "correct": 3
+  },
+  {
+    "text": "If f : → R is a differentiable function and f(2) = f(3) then ________​",
+    "options": [
+      "f′(c) ≠ 0 for some c ∈ (2,3)",
+      "f′(c) = 0 for some c ∈ (1,4)",
+      "f′(c) = 0 for some c ∈ (1,2)",
+      "f′(c) = 0 for some c ∈ (3,4)"
+    ],
+    "correct": 1
+  },
+  {
+    "text": "Two polar curves intersect orthogonally if ________",
+    "options": ["tanφ₁ · tanφ₂ = 1", "tanφ₁ · tanφ₂ = π/2", "tanφ₁ + tanφ₂ = 1", "tanφ₁ · tanφ₂ = −1"],
+    "correct": 3
+  },
+  {
+    "text": "The value of c got by applying Lagrange’s mean value theorem to the function f(x) = log(x) in [1,e] is ________",
+    "options": ["e − 1", "1", "e + 1", "e"],
+    "correct": 0
+  },
+  {
+    "text": "The value of c got by applying Lagrange’s mean value theorem to the function f(x) = x² is ________",
+    "options": ["3", "4", "2", "1"],
+    "correct": 2
+  },
+  {
+    "text": "The value of c got by applying Lagrange’s mean value theorem to the function f(x) = eˣ is ________​",
+    "options": ["e", "1", "log(e − 1)", "e − 1"],
+    "correct": 3
+  },
+  {
+    "text": "The polar form of the cartesian equation x² + y² = 9 is ________",
+    "options": ["r² = 81", "r = 3", "r sin θ = 3", "r = 9"],
+    "correct": 1
+  },
+  {
+    "text": "The radius of curvature of the curve y = x² when x = 0 is ________",
+    "options": ["1/2", "5", "1/√2", "2"],
+    "correct": 2
+  }
+      ]
+    }
+  ];
+}
+
+// Maths Unit 4: Partial Differentiation
+function getMathUnit4() {
+  return [
+    {
+      id: "math-u4",
+      subject: "Maths",
+      unit: 4,
+      name: "Unit 4 - Partial Differentiation",
+      questions: [
+        {"text":"1. If u = y^x then ∂u/∂y =","options":["y^x","y^x logy","y^x log(x)","xy^(x-1)"],"correct":2},
+        {"text":"2. If f(x,y,z) = e^(xyz) then f_x(2,2,2) =","options":["4e^8","2e^8","8e^2","4"],"correct":0},
+        {"text":"3. Given u = x + y, v = xy then ∂(u,v)/∂(x,y)=","options":["x + y","0","x - y","1"],"correct":1},
+        {"text":"4. If f(x,y) = x + y, where x = sint, y = cost then df/dt at t = π/4 is","options":["−1","−2","√2","0"],"correct":3},
+        {"text":"5. If x = rcosθ, y = rsinθ then the value of ∂(x,y)/∂(r,θ) is","options":["r","1","0","-r"],"correct":0},
+        {"text":"6. If fₓₓ = S = f_yy = f_yy, then f(x,y) has minimum at (a,b) if,","options":["rt - s² > 0 & r < 0 at (a,b)","rt - s² < 0 & r > 0 at (a,b)","rt - s² > 0 & r > 0 at (a,b)","rt - s² < 0 & r > 0 at (a,b)"],"correct":0},
+        {"text":"7. For the function f(x,y) = x³y²(1 - x - y)) one of the critical point is","options":["(1,1)","(3/5, 2/5)","(1/3, 1/3)","(1, 0)"],"correct":1},
+        {"text":"8. If (0, 0) is the critical point of f(x,y) = x⁴ + y⁴ - x² - y² + 1 then which of the following is true?","options":["Δt (0,0) / r is minimum","Δt (0,0) f_xx f_yy - (f_xy)² = 0","At (0,0) is neither maximum nor minimum","Δt (0,0) f_xx f_yy - (f_xy)² = 0"],"correct":3},
+        {"text":"9. If u = x³ + y³, then ∂²u/∂x∂y is","options":["3","0","3x + 3y","−3"],"correct":1},
+        {"text":"10. If xy² + x²y = 2 is the equation of the curve, then the slope of the tangent at (1,1) is","options":["−3","−4/3","4","−4/4"],"correct":1},
+        {"text":"11. If r = f_xx, s = f_xy = f_yy, then f(x,y) has maximum at (a,b) if,","options":["rt - s² > 0 & r < 0 at (a,b)","rt - s² < 0 & r < 0 at (a,b)","rt - s² > 0 & r > 0 at (a,b)","rt - s² < 0 & r > 0 at (a,b)"],"correct":0},
+        {"text":"12. If u = x + y and v = x - y the value of λ(xy/uv) is","options":["2","−2","−1","1"],"correct":3},
+        {"text":"13. If u = y^x then ∂u/∂x =","options":["y^x logy","1/y^x logy","xy^(x−1)","y^x"],"correct":0},
+        {"text":"14. If f(x,y) = sin(x) + cos(y) + xy², where x = cos(t), y = sin(t), then dy/dt at t = π/2 is","options":["2","−2","−1","0"],"correct":3},
+        {"text":"15. If r = f_xx, s = f_xy = f_yy, then f(x,y) has neither maximum nor minimum at (a,b) if,","options":["rt - s² > 0 & r < 0 at (a,b)","rt - s² < 0 & r < 0 at (a,b)","rt - s² > 0 & r > 0 at (a,b)","rt - s² < 0 at (a,b)"],"correct":3},
+        {"text":"16. If p = x + y + z, q = y + z, r = z then the value of ∂(p,q,r)/∂(x,y,z) is","options":["−1","1","0","2"],"correct":1},
+        {"text":"17. If u = 3x²yz + 4xz - 7, then the value of u_xx at (1,0,1) is","options":["4","3","3","5"],"correct":0},
+        {"text":"18. If u = x² - y², x = 2r - 3s + 4, y = −r + 8s - 5 then ∂u/∂r =","options":["4x - 2y","0","x - y","4x + 2y"],"correct":3},
+        {"text":"19. If u = 5x³y - 7xyz + 9xy, then the value of f_yy at (1,0,1) is","options":["21","11","22","0"],"correct":0},
+        {"text":"20. Given f_xx = 6x, f_xy = 0, f_yy = 6y then the stationary point (−1, 2) of f is","options":["A point of maximum","A point of minimum","a saddle point","Can't decide"],"correct":2}
+      ]
+    }
+  ];
+}
+
+// Maths Unit 5: Multiple Integrals
+function getMathUnit5() {
+  return [
+    {
+      id: "math-u5",
+      subject: "Maths",
+      unit: 5,
+      name: "Unit 5 - Multiple Integrals",
+      questions: [
+        {"text":"1. The value of ∫₀¹ ∫₀ˣ dy dx is","options":["1","2","0","1/2"],"correct":3},
+        {"text":"2. The value of ∫₀¹ ∫₀^√x dydx =","options":["2/3","3/2","1/3","3"],"correct":0},
+        {"text":"3. The value of ∫₀^(π/2) ∫₀¹ r dr dθ =","options":["π/4","π/2","3π/2","3π/4"],"correct":0},
+        {"text":"4. Which of the following formula can be used to find area of a plane region in the cartesian form?","options":["A = ∬ x dx dy","A = ∬ y dx dy","A = ∬ f(x,y) dx dy","A = ∬ dx dy"],"correct":3},
+        {"text":"5. The value of ∫₀¹ ∫₀¹ ∫₀¹ dx dy dz =","options":["2","0","-1","1"],"correct":3},
+        {"text":"6. ∫₀ˣ ∫₀ʸ dy dx represents","options":["The area bounded by the parabola y = x², the line x = 1 and the y = axis","The area bounded by the parabolas y = x² and y² = x","The area bounded by the parabola y = x², the line y = 1 and the y = axis","The area bounded by the parabola y = x², the line y = 1 and the x = axis"],"correct":2},
+        {"text":"7. ∫₀¹ ∫₀ˣ eʸ dy dx =","options":["e + 2","e","e - 2","2e"],"correct":2},
+        {"text":"8. The value of ∫₀^b ∫₀^a ∫₀^c dz dy dx is","options":["ab","c","ab/2c","abc"],"correct":3},
+        {"text":"9. Area of a region R in terms of polar co-ordinate is","options":["A = ∬_R r dr dθ","A = ∬_R dr dθ","A = ∬_R r² dr dθ","A = ∬_R (r + 1) dr dθ"],"correct":0},
+        {"text":"10. The value of ∫₀¹ ∫₀¹ xy dx dy is","options":["2","4","0","1/4"],"correct":3},
+        {"text":"11. After changing the order of integration, the integral value of ∫₀^∞ ∫ₓ^∞ e^(-y) dy dx is same as","options":["∫₀^∞ ∫₀^y (e^(-y))/y dx.dy","∫₀^∞ ∫₀^∞ e^(-y)/y dx.dy","∫₀^x ∫₀^y e^(-y)/y dx.dy","∫₀^1 ∫ₓ^∞ e^(-y)/y dx.dy"],"correct":0},
+        {"text":"12. In polar form, the integral ∫₀^∞ ∫₀^∞ e^(-(x²+y²)) dxdy is equal to","options":["∫₀^(π/2) ∫₀^∞ e^(-r²) r dr dθ","∫₀^(2π) ∫₀^∞ e^(-r²) dr dθ","∫₀^(π/2) ∫₀^∞ e^(-(r² + θ²)) dr dθ","∫₀^π ∫₀^∞ e^(-r) r dr dθ"],"correct":0},
+        {"text":"13. The value of Γ(1/2) =","options":["√π/2","√π","√π/3","π/2"],"correct":1},
+        {"text":"14. Which of the following is true?","options":["Γ(n) = Γ(n+1)","Γ(n+1) = nΓ(n)","Γ(n+1) = n + 2Γ(n)","Γ(n+2) = nΓ(n)"],"correct":1},
+        {"text":"15. The value of ∫₀^(π/2) sin³x cos^4 x dx is","options":["3π/280","2/35","π√π/35","35/27"],"correct":1},
+        {"text":"16. The value of β(3, 2) is:","options":["1/12","1/2","1/10","1/24"],"correct":0},
+        {"text":"17. For any m > 0, β(m, 1) =","options":["1","m","0","1/m"],"correct":3},
+        {"text":"18. If m, n > 0 then β(m,n+1)/β(m+1,n) equals","options":["m/n","n/m","1","0"],"correct":1},
+        {"text":"19. The value β(1/2, 1/2) is","options":["1","-1","π","√π"],"correct":2},
+        {"text":"20. The value of ∫₀^∞ e^(-x²) dx is","options":["√π","√(π/2)","√π/2","π/2"],"correct":1}
+      ]
+    }
+  ];
+}
 
 function getESSQuizzes() {
   return [
