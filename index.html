@@ -6612,6 +6612,18 @@ function init() {
   updateFilterUI();
   renderQuizzes();
   updateHeader();
+  // Add swipe to close sidebar on mobile
+  const sidebar = document.getElementById('sidebar');
+  let startX = 0;
+  sidebar.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+  sidebar.addEventListener('touchend', (e) => {
+    const endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50 && !sidebarCollapsed) {
+      toggleSidebar();
+    }
+  }, { passive: true });
 }
 
 function renderFilters() {
