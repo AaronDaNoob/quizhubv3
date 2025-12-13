@@ -105,6 +105,26 @@
       transition: all 200ms;
     }
     
+    .visit-counter {
+      font-size: 16px;
+      opacity: 1;
+      margin-left: 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 12px;
+      color: white;
+    }
+    
+    body.light-mode .visit-counter {
+      background: rgba(255,255,255,0.2);
+    }
+    
+    body.dark-mode .visit-counter {
+      background: rgba(0,0,0,0.2);
+    }
+    
     .container { 
       display: flex; 
       height: calc(100vh - 76px); 
@@ -157,43 +177,73 @@
     }
     
     .tab-btn {
-      padding: 10px 14px;
-      border: 1px solid;
-      border-radius: 6px;
+      padding: 10px 16px;
+      border: 2px solid;
+      border-radius: 24px;
       background: transparent;
       cursor: pointer;
       font-size: 13px;
       font-weight: 600;
       transition: all 200ms;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
     }
     
     body.light-mode .tab-btn {
-      border-color: #d0d0d0;
-      color: #555;
+      border-color: #bbb;
+      color: #666;
+      background: #f9f9f9;
     }
     
     body.dark-mode .tab-btn {
-      border-color: #666;
-      color: #ddd;
+      border-color: #777;
+      color: #bbb;
+      background: #3a3a3a;
     }
     
     .tab-btn:hover { 
-      opacity: 0.8;
+      opacity: 1;
+      border-width: 2px;
+    }
+    
+    body.light-mode .tab-btn:hover {
+      border-color: #667eea;
+      color: #667eea;
+      background: #f0f4ff;
+    }
+    
+    body.dark-mode .tab-btn:hover {
+      border-color: #555;
+      color: #ccc;
+      background: rgba(0, 0, 0, 0.15);
     }
     
     .tab-btn.active { 
-      color: white;
-      border-color: #667eea;
-      font-weight: 700;
+      color: white !important;
+      border-width: 2px !important;
+      font-weight: 700 !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
     }
     
     body.light-mode .tab-btn.active {
-      background: #667eea;
+      background: #667eea !important;
+      border-color: #667eea !important;
+      box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3) !important;
     }
     
     body.dark-mode .tab-btn.active {
-      background: #667eea;
-      border-color: #667eea;
+      background: #667eea !important;
+      border-color: #667eea !important;
+      box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3) !important;
+    }
+    
+    .tab-btn.active:hover {
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.5) !important;
+    }
+    
+    body.dark-mode .tab-btn.active:hover {
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15) !important;
     }
     
     .filter-section {
@@ -678,6 +728,40 @@
       color: #fff;
     }
     
+    .option.correct {
+      border-width: 2px;
+      font-weight: 700;
+    }
+    
+    body.light-mode .option.correct {
+      border-color: #10b981;
+      background: #dcfce7;
+      color: #065f46;
+    }
+    
+    body.dark-mode .option.correct {
+      border-color: #10b981;
+      background: rgba(16, 185, 129, 0.2);
+      color: #6ee7b7;
+    }
+    
+    .option.incorrect {
+      border-width: 2px;
+      font-weight: 700;
+    }
+    
+    body.light-mode .option.incorrect {
+      border-color: #FF2D2D;
+      background: #fee2e2;
+      color: #FF2D2D;
+    }
+    
+    body.dark-mode .option.incorrect {
+      border-color: #FF2D2D;
+      background: rgba(255, 45, 45, 0.2);
+      color: #FF2D2D;
+    }
+    
     .action-buttons {
       display: flex;
       gap: 12px;
@@ -782,7 +866,7 @@
     }
 
     body.light-mode .shortcut-tip {
-      color: #2d2d2d;
+      color: white;
       background: rgba(102,126,234,0.12);
     }
     
@@ -1092,6 +1176,13 @@
         </svg>
       </button>
       <h1>Quiz Hub</h1>
+      <span class="visit-counter">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        Visits: 4.5k+
+      </span>
     </div>
     <button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle dark/light mode">
       <svg class="theme-icon sun-icon" viewBox="0 0 24 24">
@@ -3411,6 +3502,7 @@ function getMathUnit3() {
       "{((x′) + (y′))³/²} / (x′y″ − x″y′)",
       "{((x′)² + (y′)²)³/²} / (2x′y″ − x″y′)"
     ],
+   
     "correct": 0
   },
   {
@@ -6354,6 +6446,7 @@ let allQuizzes = [];
 let currentQuiz = null;
 let currentQuestion = 0;
 let userAnswers = {};
+let answerRevealed = {};
 let quizAttempts = {};
 let currentTab = 'quiz';
 let activeFilters = { subjects: new Set(), units: new Set() };
@@ -6573,6 +6666,7 @@ function selectQuiz(id) {
   currentQuiz = makeQuizInstance(base);
   currentQuestion = 0;
   userAnswers = {};
+  answerRevealed = {};
   currentTab = 'quiz';
   currentQuizCompleted = false;
   try { startTimer(); } catch (e) {}
@@ -6657,6 +6751,7 @@ function renderQuestion() {
   if (!q) { saveQuizAttempt(); showCompletion(); return; }
 
   const ua = userAnswers[currentQuestion];
+  const revealed = answerRevealed[currentQuestion];
   document.getElementById('contentArea').innerHTML = `
     <div class="question-panel">
       <div class="question-header">
@@ -6664,11 +6759,20 @@ function renderQuestion() {
         <div class="question-text">${q.text}</div>
       </div>
       <div class="options-container">
-        ${q.options.map((opt, i) => `<div class="option ${ua === i ? 'selected' : ''}" onclick="selectAnswer(${i})">${opt}</div>`).join('')}
+        ${q.options.map((opt, i) => {
+          let classes = 'option';
+          if (ua === i) classes += ' selected';
+          if (revealed) {
+            if (i === q.correct) classes += ' correct';
+            else if (ua === i && ua !== q.correct) classes += ' incorrect';
+          }
+          return `<div class="${classes}" onclick="selectAnswer(${i})">${opt}</div>`;
+        }).join('')}
       </div>
       <div class="action-buttons">
         <button class="btn btn-secondary" ${currentQuestion === 0 ? 'disabled' : ''} onclick="prevQuestion()">Previous</button>
-        <button class="btn btn-primary" ${ua === undefined ? 'disabled' : ''} onclick="nextQuestion()">
+        <button class="btn btn-primary" ${revealed ? 'disabled' : ''} onclick="revealAnswer()">Reveal Answer</button>
+        <button class="btn btn-primary" ${ua !== undefined || revealed ? '' : 'disabled'} onclick="nextQuestion()">
           ${currentQuestion === currentQuiz.questions.length - 1 ? 'Submit Quiz' : 'Next Question'}
         </button>
       </div>
@@ -6677,7 +6781,16 @@ function renderQuestion() {
   updateHeader();
 }
 
-function selectAnswer(idx) { userAnswers[currentQuestion] = idx; renderQuestion(); }
+function selectAnswer(idx) { 
+  userAnswers[currentQuestion] = idx; 
+  answerRevealed[currentQuestion] = false; // Reset reveal state
+  renderQuestion(); 
+}
+
+function revealAnswer() {
+  answerRevealed[currentQuestion] = true;
+  renderQuestion();
+}
 
 function prevQuestion() {
   if (currentQuestion > 0) {
@@ -6834,7 +6947,7 @@ function showNoData(msg) {
 function backToQuizzes() {
   try { stopTimer(); } catch (e) {}
   const tEl = document.getElementById('timerDisplay'); if (tEl) tEl.textContent = '0s';
-  currentQuiz = null; currentQuestion = 0; userAnswers = {}; currentTab = 'quiz';
+  currentQuiz = null; currentQuestion = 0; userAnswers = {}; answerRevealed = {}; currentTab = 'quiz';
   document.querySelectorAll('.tab-btn')[0].click();
   renderQuizzes(); showWelcome(); updateHeader();
 }
