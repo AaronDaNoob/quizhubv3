@@ -7439,7 +7439,7 @@ function renderQuizzes() {
   if (activeFilters.subjects.size > 0 || activeFilters.units.size > 0) {
     filtered = allQuizzes.filter(q => {
       const sMatch = activeFilters.subjects.size === 0 || activeFilters.subjects.has(q.subject);
-      const uMatch = activeFilters.units.size === 0 || activeFilters.units.has(q.unit);
+      const uMatch = activeFilters.units.size === 0 || (Array.isArray(q.unit) ? q.unit.some(u => activeFilters.units.has(u)) : activeFilters.units.has(q.unit));
       return sMatch && uMatch;
     });
   }
