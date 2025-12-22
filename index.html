@@ -803,6 +803,26 @@
       color: #FF2D2D;
     }
     
+    .explanation {
+      margin-top: 20px;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    
+    body.light-mode .explanation {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      color: #0c4a6e;
+    }
+    
+    body.dark-mode .explanation {
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid #0891b2;
+      color: #cffafe;
+    }
+    
     .action-buttons {
       display: flex;
       gap: 12px;
@@ -1388,16 +1408,16 @@ function getChemistryQuizzes() {
   unit: 1,
   name: "Unit 1 - Electrode & Energy Systems",
   questions: [
-    {"text":"1. In a galvanic cell","options":["Anode is positive terminal","Cathode is negative terminal","Anode is negative terminal","Reaction is non-spontaneous"],"correct":2},
-    {"text":"2. An electrode is considered as a cathode when it has","options":["High reduction potential","Low reduction potential","High oxidation potential","Depends on the nature of metal"],"correct":0},
-    {"text":"3. A working concentration cell is made of two half cells having","options":["Identical electrolytes and identical concentrations","Identical electrolytes but different concentrations","Different electrolytes and identical concentrations","Different electrolytes and different concentrations"],"correct":1},
-    {"text":"4. Electrode potential of calomel electrode","options":["Varies directly with concentration of KCl","Varies inversely with concentration of KCl","Is independent of concentration of KCl","Depends only on the concentration of calomel"],"correct":1},
-    {"text":"5. When clubbed with copper electrode, calomel electrode acts as","options":["Anode","Cathode","Either as anode or cathode","Auxiliary electrode"],"correct":0},
-    {"text":"6. A calomel electrode is an example for","options":["Reference electrode","Ion selective electrode","Inert electrode","Gas electrode"],"correct":0},
-    {"text":"7. The calomel electrode is represented as","options":["Hg | Hg2Cl2 (s) | KCl (saturated or standard)","Ag | AgCl (s) | KCl (saturated)","Hg | HgCl2 (s) | KCl (saturated or standard)","Ag | AgCl (s) | HCl (0.1M) | glass"],"correct":0},
-    {"text":"8. Which is the sparingly soluble salt present in calomel electrode?","options":["HgCl","Hg2Cl2","KCl","HgCl2"],"correct":1},
-    {"text":"9. EMF of electrolyte concentration cell is independent of","options":["Number of electrons involved","Temperature","Standard electrode potential of electrode","Electrolyte concentration"],"correct":2},
-    {"text":"10. The potential of the calomel electrode depends on the concentration of","options":["Hg","Hg2Cl2","KOH","KCl"],"correct":3},
+    {"text":"1. In a galvanic cell","options":["Anode is positive terminal","Cathode is negative terminal","Anode is negative terminal","Reaction is non-spontaneous"],"correct":2,"explanation":"In a galvanic cell, oxidation occurs at the anode making it negative, and reduction occurs at the cathode making it positive."},
+    {"text":"2. An electrode is considered as a cathode when it has","options":["High reduction potential","Low reduction potential","High oxidation potential","Depends on the nature of metal"],"correct":0,"explanation":"The cathode is where reduction takes place, so an electrode with a higher reduction potential is more likely to undergo reduction and act as the cathode."},
+    {"text":"3. A working concentration cell is made of two half cells having","options":["Identical electrolytes and identical concentrations","Identical electrolytes but different concentrations","Different electrolytes and identical concentrations","Different electrolytes and different concentrations"],"correct":1,"explanation":"A concentration cell has the same electrolytes but different concentrations in the two half-cells, creating a potential difference due to the concentration gradient."},
+    {"text":"4. Electrode potential of calomel electrode","options":["Varies directly with concentration of KCl","Varies inversely with concentration of KCl","Is independent of concentration of KCl","Depends only on the concentration of calomel"],"correct":1,"explanation":"The calomel electrode's potential varies inversely with the concentration of KCl because it depends on the activity of Cl- ions."},
+    {"text":"5. When clubbed with copper electrode, calomel electrode acts as","options":["Anode","Cathode","Either as anode or cathode","Auxiliary electrode"],"correct":0,"explanation":"Calomel has a lower reduction potential than copper, so it acts as the anode in the galvanic cell."},
+    {"text":"6. A calomel electrode is an example for","options":["Reference electrode","Ion selective electrode","Inert electrode","Gas electrode"],"correct":0,"explanation":"Calomel electrode is a reference electrode because it maintains a constant potential and is used to measure the potential of other electrodes."},
+    {"text":"7. The calomel electrode is represented as","options":["Hg | Hg2Cl2 (s) | KCl (saturated or standard)","Ag | AgCl (s) | KCl (saturated)","Hg | HgCl2 (s) | KCl (saturated or standard)","Ag | AgCl (s) | HCl (0.1M) | glass"],"correct":0,"explanation":"The standard representation of calomel electrode is Hg | Hg2Cl2(s) | KCl(aq), where Hg2Cl2 is the sparingly soluble salt."},
+    {"text":"8. Which is the sparingly soluble salt present in calomel electrode?","options":["HgCl","Hg2Cl2","KCl","HgCl2"],"correct":1,"explanation":"Hg2Cl2 (mercurous chloride or calomel) is the sparingly soluble salt in the calomel electrode."},
+    {"text":"9. EMF of electrolyte concentration cell is independent of","options":["Number of electrons involved","Temperature","Standard electrode potential of electrode","Electrolyte concentration"],"correct":2,"explanation":"In a concentration cell, the EMF depends on the concentration difference, not on the standard electrode potential, which is the same for both electrodes."},
+    {"text":"10. The potential of the calomel electrode depends on the concentration of","options":["Hg","Hg2Cl2","KOH","KCl"],"correct":3,"explanation":"The potential of the calomel electrode is given by E = E° - (RT/nF) ln([Cl-]), so it depends on the concentration of KCl (source of Cl- ions)."},
     {"text":"11. Electrode potential of calomel electrode with saturated KCl at 298K is","options":["0.334 V","0.281 V","0.242 V","0.0591 V"],"correct":2},
     {"text":"12. The reference electrode used to determine the potential of zinc electrode is","options":["Glass electrode","Platinum electrode","Copper electrode","Calomel electrode"],"correct":3},
     {"text":"13. A glass electrode is commonly used to measure","options":["Oxidation potential","Reduction potential","pH of a solution","Conductivity of a solution"],"correct":2},
@@ -2584,7 +2604,7 @@ function getEMEQuizzes() {
     "correct": 1
   },
   {
-    "text": "108. In a flat belt drive, what is the length of the belt required?",
+    "text": "In a flat belt drive, if the center distance between the pulleys is 2 meters and the diameter of the larger pulley is 1 meter, what is the length of the belt needed for the drive?",
     "options": ["2 meters", "4 meters", "5 meters", "6 meters"],
     "correct": 2
   },
@@ -7572,6 +7592,7 @@ function renderQuestion() {
           return `<div class="${classes}" onclick="selectAnswer(${i})">${opt}</div>`;
         }).join('')}
       </div>
+      ${revealed && q.explanation ? `<div class="explanation">${q.explanation}</div>` : ''}
       <div class="action-buttons">
         <div class="nav-buttons">
           <button class="btn btn-secondary" ${currentQuestion === 0 ? 'disabled' : ''} onclick="prevQuestion()">Previous</button>
