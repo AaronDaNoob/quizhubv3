@@ -525,6 +525,22 @@
       opacity: 0.7;
     }
     
+    .quiz-note {
+      font-size: 12px;
+      opacity: 0.8;
+      margin-top: 8px;
+      padding: 6px 10px;
+      background: rgba(102, 126, 234, 0.1);
+      border-left: 3px solid #667eea;
+      border-radius: 4px;
+      font-style: italic;
+    }
+    
+    body.dark-mode .quiz-note {
+      background: rgba(255,255,255,0.05);
+      border-left-color: #667eea;
+    }
+    
     .no-results {
       text-align: center;
       opacity: 0.6;
@@ -1247,7 +1263,7 @@
           <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
           <circle cx="12" cy="7" r="4"></circle>
         </svg>
-        Visits: 5.3K+
+        Visits: 6K+
       </span>
     </div>
     <button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle dark/light mode">
@@ -1490,7 +1506,8 @@ function getChemistryQuizzes() {
     {"text":"33. Correct statement about electroless vs electrolytic plating","options":["Electroless includes reduction; electrolytic does not","Electrolytic is chemical; electroless is electrochemical","Electroless gives more uniform coatings","Electrolytic is used for through-holes; electroless is not"],"correct":2},
     {"text":"34. Electroless plating is used in electronics for","options":["Decorative finishes","Increasing electrical resistance","Creating conductive PCB pathways","Corrosion protection"],"correct":2},
     {"text":"35. In electronics, PCB stands for","options":["Polished Circuit Board","Printed Circular Board","Polymer Circuit Board","Printed Circuit Board"],"correct":3}
-  ]
+  ],
+  note: "Focuses on electrode systems, batteries, and photovoltaic cells."
 }
 ,
     {
@@ -2884,7 +2901,7 @@ function getBiologyQuizzes() {
     {"text":"The matrix of the mitochondria in animal cells contains DNA and?","options":["ribosomes","centrioles","Endoplasmic Reticulum","vacuoles"],"correct":0},
     {"text":"The Golgi complex releases ____________ for package and transport of proteins?","options":["ribosomes","vacuoles","vesicles","centrioles"],"correct":2},
     {"text":"____________ are called as suicide bags of the cells?","options":["lysosomes","vacuoles","centrioles","centromeres"],"correct":0},
-    {"text":"The cytoskeletal components are synthesized by ____________ in the animal cell?","options":["vesicles","ribosomes","centromere","vacuoles"],"correct":1},
+    {"text":"The cytoskeletal components are synthesized by ____________ in the animal cell?","options":["vesicles","ribosomes","centromere","vacuoles"],"correct":2},
     {"text":"The membrane around the vacuole is called as?","options":["chloroplast","tonoplast","centroplast","leucoplast"],"correct":1},
     {"text":"The shape of plant cells is?","options":["rectangular","circular","flat","irregular"],"correct":0},
 
@@ -7480,6 +7497,7 @@ function renderQuizzes() {
         <span class="quiz-tag">${q.questions.length} Qs</span>
       </div>
       <div class="quiz-meta">Tap to start</div>
+      ${q.note ? `<div class="quiz-note">${q.note}</div>` : ''}
     </div>
   `).join('');
 }
